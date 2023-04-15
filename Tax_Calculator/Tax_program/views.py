@@ -8,4 +8,4 @@ def default(request):
     return render(request,'Tax_program/default.html')
 
 def calculate_TotalPrice(request,price):
-    return render(request,'Tax_program/calcTotPrice.html',{"price":(price*(1+TAX_RATE))})
+    return render(request,'Tax_program/calcTotPrice.html',{"price":(float(price)*(1+TAX_RATE))})
