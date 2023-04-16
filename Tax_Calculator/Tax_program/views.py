@@ -9,3 +9,6 @@ def default(request):
 
 def calculate_TotalPrice(request,price):
     return render(request,'Tax_program/calcTotPrice.html',{"price":(float(price)*(1+TAX_RATE))})
+
+def get_TaxRate(request):
+    return render(request,'Tax_program/getTaxRate.html',{"tax":(TAX_RATE*100)})
