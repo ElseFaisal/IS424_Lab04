@@ -10,10 +10,8 @@ def default(request):
     return render(request,'Tax_program/default.html')
 
 def calculate_TotalPrice(request,price):
-    try:
-        return render(request,'Tax_program/calcTotPrice.html',{"price":(float(price)*(1+TAX_RATE))})
-    except ValueError:
-        return HttpResponse("You must enter a number to calculate the total price.")
+    return render(request,'Tax_program/calcTotPrice.html',{"price":(price*(1+TAX_RATE))})
+    
 
 def get_TaxRate(request):
     return render(request,'Tax_program/getTaxRate.html',{"tax":(TAX_RATE*100)})
